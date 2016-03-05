@@ -27,7 +27,7 @@ int main (void)
     srand(time(NULL));
     do
     {
-        ft_init2Dtab(grille, 7,7, '0');
+        ft_init2Dtab(grille, 7,7, 'a');
         victory=0;
 
         tour = (rand()%2)+1;
