@@ -57,7 +57,7 @@ void fnc_decaleTableauColonne (float systeme[][102] , int lignesMax, int colonne
     }
     return ;
 }
-void ft_print2Dtab (char** tab, int nb_rows, int nb_columns)
+void ft_print2Dtab (char tab[][7], int nb_rows, int nb_columns)
 {
     int i, j;
     for (i=0 ; i < nb_rows ; i++)

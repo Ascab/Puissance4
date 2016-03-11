@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1457632586 source:d:\documents\programmes\puissance4\libtab.c
+	<stdio.h>
+
+1457632350 source:d:\documents\programmes\puissance4\gestion_grille.c
+	<stdio.h>
+	<stdlib.h>
+
+1457633973 source:d:\documents\programmes\puissance4\main.c
+	<stdio.h>
+	<time.h>
+	<stdlib.h>
+	"struct.h"
+
+1456952432 d:\documents\programmes\puissance4\struct.h
+
+1457020504 d:\documents\programmes\puissance4\gestion_grille.h
+
+1456996668 d:\documents\programmes\puissance4\libtab.h
+

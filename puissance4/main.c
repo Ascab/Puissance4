@@ -4,13 +4,13 @@
 #include "struct.h"
 
 
-void ft_placement_pion(char **grille, int column, char pion, int nb_rows);
-int ft_victory_check(char **grille, char pion, int row, int column);
+int ft_placement_pion(char grille[][200], int column, char pion, int nb_rows);
+int ft_victory_check(char grille[][200], char pion, int row, int column);
 float ft_average_tab (float* grades, int nb_grades);
 void ft_switchColumns (float systeme[][102], int lignesMax, int colonnesMax);
 void fnc_decaleTableauColonne (float systeme[][102], int lignesMax, int colonnesMax);
-void ft_print2Dtab (char **tab, int nb_rows, int nb_columns);
-void ft_init2Dtab (char **tab, int nb_rows, int nb_columns, char c);
+void ft_print2Dtab (char tab[][200], int nb_rows, int nb_columns);
+void ft_init2Dtab (char tab[][200], int nb_rows, int nb_columns, char c);
 
 int main (void)
 {
@@ -27,7 +27,7 @@ int main (void)
     srand(time(NULL));
     do
     {
-        ft_init2Dtab(grille, 7,7, 'a');
+        ft_init2Dtab(grille, 7,7, ' ');
         victory=0;
 
         tour = (rand()%2)+1;
@@ -38,15 +38,15 @@ int main (void)
         printf ("Preparez vos meninges la partie va commencer\n");
         while (victory == 0)
         {
-            ft_print2Dtab(grille, 7, 7);
+            ft_print2Dtab(&grille, 7, 7);
             if (tour%2 == 0)
             {
                 printf("%s c'est a votre tour\nSur quelle colonne voulez vous placer votre pion?swag\n", joueur2.nom);
                 do
                 {
                     scanf("%d", &column);
-                }while((column < 1 || column > 7)||(grille[0][column]=! ' '));
-                ft_placement_pion(grille, column-1, 'X', 7);
+                }while((column < 1 || column > 7)||(grille[0][column-1]=! ' '));
+                row = ft_placement_pion(grille, column-1, 'X', 7);
                 printf("\n\t%d", row);
                 ft_print2Dtab(grille, 7, 7);
                 victory=ft_victory_check (grille, 'X', row, column-1);

@@ -3,18 +3,18 @@
 
 void ft_print2Dtab (char** tab, int nb_rows, int nb_columns);
 
-void ft_placement_pion(char grille[][7], int column, char pion, int nb_rows)
+int ft_placement_pion(char grille[][7], int column, char pion, int nb_rows)
 {
     int i;
     i=0;
 
-    while ((grille[i+1][column]== '0' )&&(i< nb_rows))
+    while ((grille[i+1][column]== ' ' )&&(i< nb_rows))
     {
         i++;
         printf("%d\n", i);
     }
-    grille[i][column] = 'X';
-    ft_print2Dtab(grille, 7, 7);
+    grille[i][column] = pion;
+    return i;
 }
 int ft_victory_check (char grille[][7], char pion, int row, int column)
 {
